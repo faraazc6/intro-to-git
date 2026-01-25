@@ -132,6 +132,8 @@ Before we can start versioning our game, let's provide Git our identity so it ca
 1. Set your email address.
 
    ⚠️ Don't forget to replace `me@example.com`!
+   Note that this adress will be publicly visible. You may choose to set a fake address for this course instead (omit the "--global" flag and enter a fake address).
+   Read more about email privacy [here](https://docs.github.com/en/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address).
 
    ```bash
    git config --global user.email "me@example.com"
