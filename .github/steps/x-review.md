@@ -18,9 +18,9 @@ Here's a recap of your accomplishments:
 
 Want to keep going? Try one of these other exercises! :octocat:
 
-[![Skills](https://img.shields.io/badge/Skills-Review_Pull_Requests_→-text?style=flat&logo=github&labelColor=1f2328&color=1f883d)](https://github.com/skills-dev/review-pull-requests)
+[![Skills](https://img.shields.io/badge/Skills-Review_Pull_Requests_→-text?style=flat&logo=github&labelColor=1f2328&color=1f883d)](https://github.com/skills/review-pull-requests)
 
-[![Skills](https://img.shields.io/badge/Skills-Resolve_Merge_Conflicts_→-text?style=flat&logo=github&labelColor=1f2328&color=1f883d)](https://github.com/skills-dev/resolve-merge-conflicts)
+[![Skills](https://img.shields.io/badge/Skills-Resolve_Merge_Conflicts_→-text?style=flat&logo=github&labelColor=1f2328&color=1f883d)](https://github.com/skills/resolve-merge-conflicts)
 
 
 ### Other Resources
