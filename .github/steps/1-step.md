@@ -20,7 +20,7 @@ Version control systems solve common problems developers face when managing code
 - Conflicting changes
 - Team collaboration
 
-If have ever experienced any of the below situations, you might like Git version control! 😎
+If you have ever experienced any of the below situations, you might like Git version control! 😎
 
 - `my-project-final-v2-really3.zip`
 - "When did that stop working? I didn't change anything!" (but you know you did)
