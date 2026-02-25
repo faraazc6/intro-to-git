@@ -122,7 +122,7 @@ Let's start with using Git in the command line interface (CLI). This is the sour
 Before we can start versioning our game, let's provide Git our identity so it can associate us as the author for any changes.
 
 > [!WARNING]
-> Git stores your username and email in the history, which is visible to anyone with access to the repository. GitHub provides an optional [noreply email address](https://docs.github.com/en/account-and-profile/reference/email-addresses-reference#your-noreply-email-address) you may enable from your account [email settings](https://github.com/settings/emails).
+> Git stores the author name and email in the history, which is visible to anyone with access to the repository. GitHub provides an optional [noreply email address](https://docs.github.com/en/account-and-profile/reference/email-addresses-reference#your-noreply-email-address) you may enable from your account [email settings](https://github.com/settings/emails).
 
 1. Set your display name.
 
@@ -132,7 +132,7 @@ Before we can start versioning our game, let's provide Git our identity so it ca
    git config --global user.name "First Last"
    ```
 
-1. Set your email address. For additional privacy, consider enabling your private noreply address in your account [email settings](https://github.com/settings/emails).
+1. Set your email address. For additional privacy, consider enabling your noreply address in your account [email settings](https://github.com/settings/emails) to keep your personal email private.
 
    ⚠️ Don't forget to replace `me@example.com`!
 
