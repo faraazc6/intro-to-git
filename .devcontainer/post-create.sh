@@ -4,7 +4,7 @@
 # Do this before installing the exercise monitor
 git config --global pager.log false
 git config --global core.pager "less -FX"
-
+# Added a comment
 # Install exercise monitor - Do this last to avoid accidental triggers during startup.
 /workspaces/${RepositoryName}/.devcontainer/exercise-monitor/install.sh
 
