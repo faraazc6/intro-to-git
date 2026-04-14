@@ -10,7 +10,7 @@ const COLORS = {
   1: "#f48771", // Bug red
   2: "#4ec9b0", // Function cyan
   3: "#ce9178", // String orange
-  4: "#c586c0", // Class purple
+  4: "#c586c0", // Class purple 2
   5: "#dcdcaa", // Variable yellow
   6: "#569cd6", // Keyword blue
   7: "#b5cea8", // Number green
