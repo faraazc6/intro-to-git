@@ -14,8 +14,12 @@
           "**/${RepoName}": true
         },
 
+        // Don't compact folders, so structure is more obvious
+        "explorer.compactFolders": false,
+
+        // Open in regular browser
         "livePreview.openPreviewTarget": "External Browser",
-	      "livePreview.serverRoot": "stack-overflown/src",
+        "livePreview.serverRoot": "stack-overflown/src",
 
         // Hide publish button
         "git.showActionButton": {
