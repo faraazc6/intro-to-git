@@ -98,7 +98,7 @@ Let's add version control to our game and commit the current version.
 
 Let's also try adding files with our code editor, in this case the documentation for our game.
 
-1. In the file explorer, click the **New File...** icon to start a README file with the following name. Make sure it is inside the `src/stack-overflown/` folder.
+1. In the file explorer, click the **New File...** icon to start a README file with the following name. Make sure it is inside the `./stack-overflown/` folder.
 
    ```txt
    README.md
