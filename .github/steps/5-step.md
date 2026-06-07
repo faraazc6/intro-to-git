@@ -249,11 +249,10 @@ Let's start a branch and practice committing changes to it.
 
 1. Select the **Create new branch...** option and use the below name.
 
-   <img width="350px" src="https://github.com/user-attachments/assets/d3f26f30-3f8f-4cbb-8fb2-5754838b0fdf"/>
-
    ```txt
    add-level-counter
    ```
+   <img width="350px" src="https://github.com/user-attachments/assets/d3f26f30-3f8f-4cbb-8fb2-5754838b0fdf"/><br/>
 
    <img width="350px" src="https://github.com/user-attachments/assets/e3ce472c-650c-4674-a778-ad2e310ef0c6"/>
 
@@ -325,17 +324,19 @@ Let's start a branch and practice committing changes to it.
 
    <img width="350px" src="https://github.com/user-attachments/assets/1c2e4ce9-3c10-4fb0-9eba-e789bd1de525"/>
 
-1. Click the three dot menu (`...`), then `Branch`, and select `Merge...`. Notice it performed a normal **Fast Forward** style merge.
+1. Click the three-dot menu (`...`) next to `stack-overflown` under the **REPOSITORIES** section. Select `Merge Branch` and choose `add-level-counter`.
 
-   <img width="350px" src="https://github.com/user-attachments/assets/7b21ad36-5012-4fb2-a30a-c02a5884ea52"/><br/>
+   <img width="350px" src="https://github.com/user-attachments/assets/9b65a1c9-aa61-4434-a257-d9ab57de6f59"/><br/>
 
    <img width="350px" src="https://github.com/user-attachments/assets/aa35bdc4-9a90-4c62-a43c-9de9838d15a6"/><br/>
 
+   Notice that it performed a normal fast-forward merge.
+
    <img width="350px" src="https://github.com/user-attachments/assets/7492e9f2-ceb4-4c10-a5da-8a20d0b59441"/>
 
-1. Click the three dot menu (`...`), then `Branch`, and select `Delete Branch...`.
+1. Click the three-dot menu (`...`) next to `stack-overflown` under the **REPOSITORIES** section again. Select `Delete Branch` and choose `add-level-counter`.
 
-   <img width="350px" src="https://github.com/user-attachments/assets/7b21ad36-5012-4fb2-a30a-c02a5884ea52"/><br/>
+   <img width="350px" src="https://github.com/user-attachments/assets/9b65a1c9-aa61-4434-a257-d9ab57de6f59"/><br/>
 
    <img width="350px" src="https://github.com/user-attachments/assets/b75f4349-c3da-4228-95c9-9025c33f01c2"/>
 
