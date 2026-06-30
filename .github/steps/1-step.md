@@ -124,7 +124,7 @@ Before we can start versioning our game, let's provide Git our identity so it ca
 > [!WARNING]
 > Git stores the author name and email in the history, which is visible to anyone with access to the repository. GitHub provides an optional [noreply email address](https://docs.github.com/en/account-and-profile/reference/email-addresses-reference#your-noreply-email-address) that you can enable from your account [email settings](https://github.com/settings/emails).
 
-1. Set your Git username.
+1. Set your Git author name.
 
    ⚠️ Don't forget to replace `First` and `Last`!
 
