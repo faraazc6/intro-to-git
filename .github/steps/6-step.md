@@ -1,14 +1,14 @@
 ## Step 6: Introduction to Collaboration
 
-Nice work! You've mastered local Git operations and our game is now safe to experiment developing new features! 🎉
+Nice work! You've mastered local Git operations and our game is now safe for experimenting with new features! 🎉
 
-But.. the really fun development happens in teams, not alone. That is another exercise, but let's start exploring the topic.
+However, the real fun happens in teams, not alone. That's a topic for another exercise, but let's explore it further.
 
 ### 📖 Theory: Git Collaboration Concepts
 
 Since branches provide powerful parallelism to work on different features independently, a natural extension is to enable multiple people to work in parallel.
 
-At the beginning, we mentioned Git is a "distributed" version control system, this means it can share changes with other copies of the same repository!
+At the beginning, we mentioned that Git is a "distributed" version control system, meaning it can share changes with other copies of the same repository.
 
 ### What does collaboration look like?
 
@@ -16,9 +16,9 @@ Here is a typical workflow:
 
 1. Copy a repository to your local machine (called **cloning**).
 1. Create branches and develop new features.
-1. Publish your changes to a remote repository, somewhere others can also access (called **pushing**).
-1. Other developers decide if they like your changes. If so, they merge them into their version of the project (called **pulling**).
-1. Additionally, you might proactively ask another developer to integrate your changes into their copy (called a **pull request**).
+1. Publish your changes to a remote repository where others can access them (called **pushing**).
+1. Other developers review your changes and merge them into the project (often via a **pull request**).
+1. You may also update your local copy with changes from others (called **pulling**).
 
 ### ⌨️ Activity: Quick Review
 

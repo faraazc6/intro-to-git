@@ -1,6 +1,6 @@
 ## Step 3: Exploring Git History
 
-With our game now tracked in Git, let's learn how to explore what changes were made, when they were made, and by whom.
+Now that our game is tracked in Git, let's learn how to explore what changes were made, when, and by whom.
 
 ### 📖 Theory: Understanding Git History
 
@@ -12,7 +12,7 @@ Git maintains a complete history of your project through commits. Each commit co
 - **Timestamp**: When the changes were applied.
 - **Commit message**: Description of the changes included in that commit.
 
-Additionally, the `HEAD` pointer is a special label that indicates your current position in the project history. Your project probably looks similar to the below diagram.
+Additionally, the `HEAD` pointer is a special label that indicates your current position in the project history. Your project probably looks similar to the below diagram:
 
 ```mermaid
 ---
@@ -25,15 +25,15 @@ gitGraph
    commit id: "762ac02 Start developer docs" tag: "HEAD"
 ```
 
-### What are the important Git commands?
+### Git History Commands
 
 Everyone prefers viewing the history in different ways, and the community has created many options.
-Here are a few of the common commands and options you will often use.
+Here are a few of the common commands and options you will often use:
 
-- `git log` - Display a detailed history of the project.
-  - `git log --oneline` - Show one commit per line, but with less detail.
-  - `git log --graph` - Show a visual diagram, useful for diverging paths.
-- `git checkout` - Move to a different point in the history (modifies files in your working directory).
+- `git log` - Displays a detailed history of the project.
+  - `git log --oneline` - Shows one commit per line, but with less detail.
+  - `git log --graph` - Shows a visual diagram, useful for diverging branches.
+- `git checkout` - Moves to a different point in the history (modifies files in your working directory).
 
 ### ⌨️ Activity 1: Explore the history (using the CLI)
 
@@ -53,7 +53,7 @@ Here are a few of the common commands and options you will often use.
 
    <img width="500px" src="https://github.com/user-attachments/assets/b49a6352-4233-4903-9254-18eaec569895"/>
 
-1. Show a visual graph of the full commit history.
+1. Show a visual graph of the commit history.
 
    ```bash
    git log --graph --oneline
@@ -101,7 +101,7 @@ Here are a few of the common commands and options you will often use.
 
    <img width="350px" src="https://github.com/user-attachments/assets/42310a18-84a4-4dca-8f45-18d589e187c0"/>
 
-1. With your exploration of the Git history finished, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next steps.
+1. With your exploration of the Git history complete, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next steps.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>
