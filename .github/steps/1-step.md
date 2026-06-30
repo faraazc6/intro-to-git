@@ -1,8 +1,8 @@
 ## Step 1: Introduction to Git Version Control
 
-You've been working on a project and realized organizing backups has become difficult. And, since everyone shares updates differently, collaborating with them is very confusing.
+You've been working on a project and realized that organizing backups has become difficult. Since everyone shares updates differently, collaborating with them is very confusing.
 
-After some quick searching, you learned about [Git](https://git-scm.com/). Supposedly, it makes keeping track of changes and collaborating with others easy. It removes the confusion of older methods like file naming conventions, share drives, and emailed copies of files.
+After some quick searching, you learned about [Git](https://git-scm.com/). Supposedly, it makes keeping track of changes and collaborating with others easier. It removes the confusion of older methods like file naming conventions, share drives, and emailed copies of files.
 
 > [!IMPORTANT]
 > This exercise teaches Git usage on a machine with it already installed.
@@ -97,11 +97,11 @@ To start practicing Git, let's first open a pre-configured development environme
 
 Let's start with using Git in the command line interface (CLI). This is the source of all Git functionality and most powerful option.
 
-1. If the integrated terminal is not already available, open it using `Ctrl+Shift+P` then searching for and selecting `View: Toggle Terminal`
+1. If the integrated terminal is not already available, open it by pressing `Ctrl+Shift+P`, then search for `View: Toggle Terminal` and press `Enter`.
 
    <img width="500px" src="https://github.com/user-attachments/assets/4bbf918a-f87c-4875-b7fd-61d8b16a70e1"/>
 
-1. Show the currently installed version of Git, to verify it is installed.
+1. Show the installed version of Git to verify that it is installed.
 
    ```bash
    git --version
@@ -122,9 +122,9 @@ Let's start with using Git in the command line interface (CLI). This is the sour
 Before we can start versioning our game, let's provide Git our identity so it can associate us as the author for any changes.
 
 > [!WARNING]
-> Git stores the author name and email in the history, which is visible to anyone with access to the repository. GitHub provides an optional [noreply email address](https://docs.github.com/en/account-and-profile/reference/email-addresses-reference#your-noreply-email-address) you may enable from your account [email settings](https://github.com/settings/emails).
+> Git stores the author name and email in the history, which is visible to anyone with access to the repository. GitHub provides an optional [noreply email address](https://docs.github.com/en/account-and-profile/reference/email-addresses-reference#your-noreply-email-address) that you can enable from your account [email settings](https://github.com/settings/emails).
 
-1. Set your display name.
+1. Set your Git author name.
 
    ⚠️ Don't forget to replace `First` and `Last`!
 
@@ -132,7 +132,7 @@ Before we can start versioning our game, let's provide Git our identity so it ca
    git config --global user.name "First Last"
    ```
 
-1. Set your email address. For additional privacy, consider enabling your noreply address in your account [email settings](https://github.com/settings/emails) to keep your personal email private.
+1. Set your Git email address. For additional privacy, consider enabling your noreply address in your account [email settings](https://github.com/settings/emails) to keep your personal email private.
 
    ⚠️ Don't forget to replace `me@example.com`!
 
@@ -148,10 +148,10 @@ Before we can start versioning our game, let's provide Git our identity so it ca
 
    <img width="500px" src="https://github.com/user-attachments/assets/62688039-3601-4a23-8f61-408210faff0a"/>
 
-1. With your author details configured, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next steps.
+1. With your Git identity configured, Mona should already be busy checking your work. Give her a moment and keep watch in the comments. You will see her respond with progress info and the next steps.
 
 > [!TIP]
-> You can also change your username and email per project, if you have multiple accounts. On an **existing** project repository, use `--local` instead of `--global`.
+> You can also change your username and email per project if you have multiple accounts. On an **existing** project repository, use `--local` instead of `--global`.
 
 <details>
 <summary>Having trouble? 🤷</summary><br/>

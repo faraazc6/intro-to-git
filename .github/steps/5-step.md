@@ -1,6 +1,6 @@
 ## Step 5: Working with Branches
 
-With our game now tracked, we know it is easy to return to a working version. And since we can see the exact changes we are committing to history, we know nothing unrelated will be included.
+With our game now tracked in Git, we know it is easy to return to a working version. Since we can see the exact changes we are committing to history, we know nothing unrelated will be included.
 
 But now, that brings up more questions! 😱
 
@@ -10,19 +10,19 @@ But now, that brings up more questions! 😱
 
 "What if I need to work on multiple features/fixes at the same time?"
 
-### 📖 Theory: Understanding Branches
+### 📖 Theory: Understanding Git Branches
 
-Branches in Git are lightweight pointers (like labels) to specific commits. This allows working on a dependent version without influencing the original, which is great for parallel feature development and collaboration.
+Branches in Git are lightweight pointers (like labels) to specific commits. They allow you to work independently without affecting the original codebase, which is ideal for parallel feature development and collaboration.
 
 Key Concepts:
 
-- **`main` Branch**: Usually the trusted working version, and the first branch. (historically called `master`)
-- **Feature Branch**: A safe isolated space to develop without affecting the trusted version.
-- **Merging**: Combining changes from different branches.
+- **`main` Branch**: Usually the default branch containing the stable version of the project (historically called `master`).
+- **Feature Branch**: A safe, isolated environment to develop features without affecting the main branch.
+- **Merging**: Combining changes from different branches into one branch.
 
 ### How do you combine branches?
 
-There are multiple strategies for organizing commits. Usually, all in the name of different styles of organization, transparency, and traceability. Let's introduce the most common.
+There are multiple strategies for organizing commits. Usually, all in the name of different styles of organization, transparency, and traceability. Let's introduce the most common:
 
 **Fast-forward merge**: Move the new commits from the child branch onto the parent branch.
 
@@ -110,14 +110,14 @@ gitGraph LR:
 
 </div>
 
-### What are the important Git commands?
+### Git Branch Commands
 
-- `git branch my-new-feature` - Start a branch from the current branch.
-- `git checkout my-new-feature` - Change your working directory to a different version from the repository history.
-- `git merge` - Apply the commits from one branch onto another branch. (Default: Fast forward merge)
+- `git branch my-new-feature` - Creates a new branch from the current commit.
+- `git checkout my-new-feature` - Switches to a different branch or commit.
+- `git merge` - Combines changes from one branch into another. (Uses fast-forward when possible)
 
 <!-- > [!TIP]
-> You can perform a simple "undo" of the last commit with `git reset --soft HEAD~1`. For VS Code, use the Command Palette and search for `Undo Last Commit`. -->
+> You can perform a simple "undo" of the last commit with `git reset --soft HEAD~1`. For VS Code, use the Command Palette `CTRL+SHIFT+P` and search for `Undo Last Commit`. -->
 
 > [!TIP]
 > Git 2.23 introduced the `git switch` command to simplify branch management. You will likely see it referenced more in the future.
@@ -128,7 +128,7 @@ gitGraph LR:
 
 ### ⌨️ Activity 1: Commit to a branch (using the CLI)
 
-Let's start a branch and practice committing changes to it.
+Let's create a branch and practice committing changes to it.
 
 1. Before we start, let's see what our history looks like. Notice that it is perfectly linear (no branches yet).
 
@@ -155,7 +155,7 @@ Let's start a branch and practice committing changes to it.
 
 1. Open `index.js` so we can fix the high score feature.
 
-1. On `line 41`, insert a variable for high score and then commit it.
+1. On `line 41`, add a variable for high score and commit the change.
 
    ```js
    let highScore = 0;
@@ -166,7 +166,7 @@ Let's start a branch and practice committing changes to it.
    git commit -m "Add new variable for tracking high score"
    ```
 
-1. On `line 61`, insert code to load the score from local storage and then commit it.
+1. On `line 61`, add some code to load the score from local storage and commit the change.
 
    ```js
    // Load high score from localStorage
@@ -179,7 +179,7 @@ Let's start a branch and practice committing changes to it.
    git commit -m "Add loading of stored high score"
    ```
 
-1. On `line 313` replace the `updateScore` function so it tracks the highest score, then commit it.
+1. On `line 313`, replace the `updateScore` function so it tracks the highest score and commit the change.
 
    ```js
    function updateScore() {
@@ -215,7 +215,7 @@ Let's start a branch and practice committing changes to it.
 
 1. Merge the new feature.
 
-   > 🪧 **Note:** For learning, we use the "not fast forward" option so the branch stays visible in the history. It will make our visual diagram more interesting to look at.
+   > 🪧 **Note:** For learning, we use the `--no-ff` merge option so the branch remains visible in the history. This will make our visual diagram more interesting to explore.
 
    ```bash
    git merge --no-ff fix-incomplete-high-score -m "Fix high score tracker"
@@ -257,7 +257,7 @@ Let's start a branch and practice committing changes to it.
 
    <img width="350px" src="https://github.com/user-attachments/assets/e3ce472c-650c-4674-a778-ad2e310ef0c6"/>
 
-1. Open `index.html`. On `line 21`, insert a new element for showing the current level, then commit the change.
+1. Open `index.html`. On `line 21`, add a new element for showing the current level and commit the change.
 
    ```diff
    <h3>Level</h3>
@@ -272,7 +272,7 @@ Let's start a branch and practice committing changes to it.
 
 1. Open `index.js` so we can add the level counter.
 
-1. On `line 42`, add 2 variables for tracking level, then commit the change.
+1. On `line 42`, add two variables for tracking level and commit the change.
 
    ```js
    let level = 1;
@@ -285,7 +285,7 @@ Let's start a branch and practice committing changes to it.
    Add variables for level and clear counter
    ```
 
-1. On `line 273`, replace the `checkPatternMatch` method with the following, then commit the change.
+1. On `line 273`, replace the `checkPatternMatch` method with the following and commit the change.
 
    ```js
    function checkPatternMatch() {
