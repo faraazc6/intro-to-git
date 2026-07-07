@@ -1,3 +1,4 @@
+# Hello world
 # Introduction to Git
 
 _Use Git version control to work on a game using command line (CLI) and VS Code._
