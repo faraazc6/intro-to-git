@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Gateways Tracking</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --panel: rgba(10, 20, 35, 0.92);
+        --panel-2: rgba(16, 30, 48, 0.9);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: #f4f7fb;
+        --muted: #8ba0bd;
+        --accent: #5ee7c7;
+        --accent-2: #5b8cff;
+        --danger: #ff6b6b;
+        --warning: #ffd166;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(91, 140, 255, 0.25), transparent 26%),
+          radial-gradient(circle at bottom right, rgba(94, 231, 199, 0.18), transparent 30%),
+          var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        padding: 28px;
+      }
+
+      .dashboard {
+        max-width: 1300px;
+        margin: 0 auto;
+        background: linear-gradient(145deg, rgba(7, 17, 31, 0.97), rgba(10, 24, 42, 0.96));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(18px);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .title h1 {
+        margin: 0 0 6px;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .title p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .pill {
+        background: rgba(94, 231, 199, 0.12);
+        color: var(--accent);
+        border: 1px solid rgba(94, 231, 199, 0.25);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(180px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .stat-card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 16px;
+      }
+
+      .stat-card .label {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+      }
+
+      .stat-card .value {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .stat-card .delta {
+        font-size: 0.85rem;
+        color: var(--accent);
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 20px;
+      }
+
+      .list-card {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 18px;
+      }
+
+      .list-card h2 {
+        margin: 0 0 16px;
+        font-size: 1.1rem;
+      }
+
+      .gateway-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .gateway-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .gateway-main {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      }
+
+      .gateway-title {
+        font-weight: 600;
+      }
+
+      .gateway-meta {
+        font-size: 0.82rem;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+
+      .status {
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .status.active {
+        background: rgba(94, 231, 199, 0.16);
+        color: var(--accent);
+      }
+
+      .status.pending {
+        background: rgba(255, 209, 102, 0.16);
+        color: var(--warning);
+      }
+
+      .status.alert {
+        background: rgba(255, 107, 107, 0.16);
+        color: var(--danger);
+      }
+
+      .side-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .mini-card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 16px;
+      }
+
+      .mini-card h3 {
+        margin: 0 0 12px;
+        font-size: 1rem;
+      }
+
+      .bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        overflow: hidden;
+        margin-top: 8px;
+      }
+
+      .bar > span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+
+      .client-row {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 960px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, minmax(150px, 1fr));
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 14px;
+        }
+
+        .dashboard {
+          padding: 16px;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="topbar">
+        <div class="title">
+          <h1>Tracking de pasarelas de pago</h1>
+          <p>Vista de clientes, estado y flujo de pagos en tiempo real.</p>
+        </div>
+        <div class="pill">+12% esta semana</div>
+      </header>
+
+      <section class="stats">
+        <article class="stat-card">
+          <div class="label">Pasarelas activas</div>
+          <div class="value">18</div>
+          <div class="delta">+3 nuevas</div>
+        </article>
+        <article class="stat-card">
+          <div class="label">Pagos exitosos</div>
+          <div class="value">2.4k</div>
+          <div class="delta">98.2% éxito</div>
+        </article>
+        <article class="stat-card">
+          <div class="label">Clientes monitoreados</div>
+          <div class="value">1.2k</div>
+          <div class="delta">+120 hoy</div>
+        </article>
+        <article class="stat-card">
+          <div class="label">Pendientes</div>
+          <div class="value">42</div>
+          <div class="delta">Revisión rápida</div>
+        </article>
+      </section>
+
+      <section class="content">
+        <div class="list-card">
+          <h2>Pasarelas principales</h2>
+
+          <div class="gateway-item">
+            <div class="gateway-main">
+              <div class="avatar">P</div>
+              <div>
+                <div class="gateway-title">PayFlow Pro</div>
+                <div class="gateway-meta">315 clientes · Última revisión 8 min</div>
+              </div>
+            </div>
+            <div class="status active">Activo</div>
+          </div>
+
+          <div class="gateway-item">
+            <div class="gateway-main">
+              <div class="avatar">S</div>
+              <div>
+                <div class="gateway-title">Stripe Secure</div>
+                <div class="gateway-meta">186 clientes · 94% aprobación</div>
+              </div>
+            </div>
+            <div class="status pending">Pendiente</div>
+          </div>
+
+          <div class="gateway-item">
+            <div class="gateway-main">
+              <div class="avatar">M</div>
+              <div>
+                <div class="gateway-title">MercadoPay</div>
+                <div class="gateway-meta">521 clientes · Riesgo bajo</div>
+              </div>
+            </div>
+            <div class="status active">Activo</div>
+          </div>
+
+          <div class="gateway-item">
+            <div class="gateway-main">
+              <div class="avatar">C</div>
+              <div>
+                <div class="gateway-title">CashLink</div>
+                <div class="gateway-meta">74 clientes · Revisión manual</div>
+              </div>
+            </div>
+            <div class="status alert">Alerta</div>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="mini-card">
+            <h3>Distribución por canal</h3>
+            <div class="client-row"><span>Web</span><strong>64%</strong></div>
+            <div class="bar"><span style="width: 64%"></span></div>
+            <div class="client-row" style="margin-top: 12px;"><span>App</span><strong>28%</strong></div>
+            <div class="bar"><span style="width: 28%"></span></div>
+            <div class="client-row" style="margin-top: 12px;"><span>POS</span><strong>8%</strong></div>
+            <div class="bar"><span style="width: 8%"></span></div>
+          </div>
+
+          <div class="mini-card">
+            <h3>Clientes en seguimiento</h3>
+            <p style="margin: 0 0 10px; color: var(--muted);">Últimos eventos importantes</p>
+            <div class="client-row"><span>Laura M.</span><strong>Pago OK</strong></div>
+            <div class="client-row"><span>Jorge R.</span><strong>Verificación</strong></div>
+            <div class="client-row"><span>Ana C.</span><strong>Reintento</strong></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>
